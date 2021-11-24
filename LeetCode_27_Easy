@@ -1,0 +1,22 @@
+/* Remove Element */
+
+// Does not care the rest of array, hope to remove the element in-place.
+// Way to think in O(N) -> Go through all elements once and make sure the array val and expected value
+// If the same then continue the loop, otherwise, replace the index and the value in array.
+
+#include <vector>
+
+class Solution {
+public:
+    int removeElement(vector<int>& nums, int val) {
+        if(nums.size()==0) return 0;
+        int count=0;
+        for(int i=0 ; i<nums.size(); i++) {
+            if(nums[i]!=val) {
+                nums[count]=nums[i];
+                count++;
+            }
+        }
+        return count;
+    }
+};
